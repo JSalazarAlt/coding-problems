@@ -141,7 +141,9 @@ public class ClimbingLeaderboard {
                     player.add(scanner.nextInt());
                 }
 
-                // Print the result for the corresponding test case
+                // Print the result for the corresponding test case. The results should be:
+                // Test Case #1: [6, 4, 2, 1]
+                // Test Case #2: [6, 5, 4, 2, 1]
                 List<Integer> result = climbingLeaderboard(ranked, player);
                 System.out.println("Test Case #" + test + ":");
                 System.out.println(result);

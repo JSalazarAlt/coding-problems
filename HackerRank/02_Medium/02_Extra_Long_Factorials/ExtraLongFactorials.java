@@ -57,7 +57,9 @@ public class ExtraLongFactorials {
                 // Read the number to compute the factorial
                 int n = scanner.nextInt();
                 
-                // Print the result for the corresponding test case
+                // Print the result for the corresponding test case. The results should be:
+                // Test Case #1: 15511210043330985984000000
+                // Test Case #2: 119622220865480194561963161495657715064383733760000000000
                 System.out.println("Test Case #" + test + ":");
                 extraLongFactorials(n);
                 System.out.println();

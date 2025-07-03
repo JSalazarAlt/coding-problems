@@ -101,7 +101,9 @@ public class NonDivisibleSubset {
                     s.add(scanner.nextInt());
                 }
 
-                // Print the result for the corresponding test case
+                // Print the result for the corresponding test case. The results should be:
+                // Test Case #1: 3
+                // Test Case #2: 11
                 int result = nonDivisibleSubset(k, s);
                 System.out.println("Test Case #" + test + ":");
                 System.out.println(result);
