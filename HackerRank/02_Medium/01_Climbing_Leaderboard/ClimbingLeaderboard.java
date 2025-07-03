@@ -21,7 +21,8 @@ public class ClimbingLeaderboard {
      *    - If it's higher than the top score, assign rank 1.
      *    - If it's lower than the lowest score, assign rank = length of unique scores + 1.
      *    - Otherwise, perform a modified binary search to find the correct rank position.
-     *
+     * 3. Return the list of ranks for each player's score.
+     * 
      * The binary search is adapted to work on a descending list and returns the rank
      * where the player's score would fit.
      *
