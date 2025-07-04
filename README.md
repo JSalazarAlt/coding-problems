@@ -49,3 +49,5 @@ To run any solution:
 
 - **LeetCode**: Algorithm and data structure problems.
 - **HackerRank**: Programming challenges and contests.
+# coding_puzzles
+Solution to coding puzzles of LeetCode, HackerRank, and Meta.
