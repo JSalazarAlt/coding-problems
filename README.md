@@ -1,2 +1,2 @@
 # coding_puzzles
-Solution to coding puzzles of LeetCode and HackerRank
+Solution to coding puzzles of LeetCode, HackerRank, and Meta.
