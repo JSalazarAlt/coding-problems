@@ -44,7 +44,7 @@ public class ThreeSum {
         int n = nums.length;
 
         // Iterate over the array to establish a target reference nums[i]
-        for (int i = 0; i < n - 2; i++) {
+        for (int i = 0; i < n; i++) {
             
             // Skip duplicate elements for i
             if (i > 0 && nums[i] == nums[i - 1]) {
