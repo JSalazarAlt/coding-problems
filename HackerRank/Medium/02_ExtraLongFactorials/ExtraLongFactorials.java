@@ -46,7 +46,7 @@ public class ExtraLongFactorials {
         try {
             
             // Declare the Scanner object to read the file
-            File file = new File("HackerRank/Medium/02_ExtraLongFactorials/test_cases.txt");
+            File file = new File("test_cases.txt");
             Scanner scanner = new Scanner(file);
 
             // Read the number of test cases
@@ -70,7 +70,7 @@ public class ExtraLongFactorials {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with Puzzles as source directory.");
+            System.out.println("File not found: Open the project with 02_ExtraLongFactorials as source directory.");
 
         }
 

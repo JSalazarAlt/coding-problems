@@ -80,7 +80,7 @@ public class ThreeSumClosest {
         try {
             
             // Declare the Scanner object to read the file
-            File file = new File("LeetCode/Medium/016_ThreeSumClosest/test_cases.txt");
+            File file = new File("test_cases.txt");
             Scanner scanner = new Scanner(file);
 
             // Read the number of test cases
@@ -114,7 +114,7 @@ public class ThreeSumClosest {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with Puzzles as source directory.");
+            System.out.println("File not found: Open the project with 016_ThreeSumClosest as source directory.");
 
         }
         

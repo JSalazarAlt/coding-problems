@@ -34,15 +34,13 @@ class ReverseInteger {
         
         // Process each digit from right to left
         while (x != 0) {
-            // Check for overflow before multiplying by 10
-            if ((reverse_x < Integer.MAX_VALUE / 10) || (reverse_x > Integer.MIN_VALUE / 10)) {
-                // Extract the last digit and add it to the reversed number
-                reverse_x = 10 * reverse_x + x % 10;
-                // Remove the last digit from x
-                x = x / 10;
+            if ((reverse_x > Integer.MAX_VALUE / 10) || (reverse_x == Integer.MAX_VALUE / 10 && x % 10 > 7)) {
+                return 0; // Positive overflow
+            } else if ((reverse_x < Integer.MIN_VALUE / 10) || (reverse_x == Integer.MIN_VALUE / 10 && x % 10 < -8)) {
+                return 0; // Negative overflow
             } else {
-                // Return 0 if overflow would occur
-                return 0;
+                reverse_x = 10 * reverse_x + x % 10;
+                x = x / 10;
             }
         }
         
@@ -54,7 +52,7 @@ class ReverseInteger {
         try {
             
             // Declare the Scanner object to read the file
-            File file = new File("LeetCode/Medium/007_ReverseInteger/test_cases.txt");
+            File file = new File("test_cases.txt");
             Scanner scanner = new Scanner(file);
 
             // Read the number of test cases
@@ -65,7 +63,12 @@ class ReverseInteger {
                 // Read the integer to reverse
                 int x = scanner.nextInt();
                 
-                // Print the result for the corresponding test case
+                // Print the result for the corresponding test case. The results should be:
+                // Test Case #1: 321
+                // Test Case #2: -321
+                // Test Case #3: 21
+                // Test Case #4: 0
+                // Test Case #5: 0
                 int result = reverse(x);
                 System.out.println("Test Case #" + test + ":");
                 System.out.println(result);
@@ -77,7 +80,7 @@ class ReverseInteger {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with Puzzles as source directory.");
+            System.out.println("File not found: Open the project with 007_ReverseInteger as source directory.");
 
         }
 
