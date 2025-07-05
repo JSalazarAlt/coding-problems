@@ -54,7 +54,7 @@ public class ReverseString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String input = scanner.nextLine();
+                String input = scanner.next();
                 
                 // Convert string to character array
                 char[] s = input.toCharArray();
