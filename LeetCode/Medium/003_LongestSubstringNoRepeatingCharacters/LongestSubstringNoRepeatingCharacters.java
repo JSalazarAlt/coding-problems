@@ -42,8 +42,9 @@ class LongestSubstringNoRepeatingCharacters {
 
         // Expand the sliding window using the right pointer
         while (right < s.length()) {
-            char charRight = s.charAt(right);
+
             char charLeft = s.charAt(left);
+            char charRight = s.charAt(right);
             
             // If character is not in current window, expand window
             if (!set.contains(charRight)) {
@@ -55,6 +56,7 @@ class LongestSubstringNoRepeatingCharacters {
                 set.remove(charLeft);
                 left++;
             }
+            
         }
 
         return max;
