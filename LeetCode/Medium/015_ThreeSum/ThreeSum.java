@@ -117,6 +117,7 @@ public class ThreeSum {
                 System.out.println("Test Case #" + test + ":");
                 System.out.println(result);
                 System.out.println();
+                
             }
             
             // Close the Scanner object
