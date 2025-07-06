@@ -30,21 +30,21 @@ class ReverseInteger {
      */
     public static int reverse(int x) {
         // Initialize the reversed number
-        int reverse_x = 0;
+        int reverseX = 0;
         
         // Process each digit from right to left
         while (x != 0) {
-            if ((reverse_x > Integer.MAX_VALUE / 10) || (reverse_x == Integer.MAX_VALUE / 10 && x % 10 > 7)) {
+            if ((reverseX > Integer.MAX_VALUE / 10) || (reverseX == Integer.MAX_VALUE / 10 && x % 10 > 7)) {
                 return 0; // Positive overflow
-            } else if ((reverse_x < Integer.MIN_VALUE / 10) || (reverse_x == Integer.MIN_VALUE / 10 && x % 10 < -8)) {
+            } else if ((reverseX < Integer.MIN_VALUE / 10) || (reverseX == Integer.MIN_VALUE / 10 && x % 10 < -8)) {
                 return 0; // Negative overflow
             } else {
-                reverse_x = 10 * reverse_x + x % 10;
+                reverseX = 10 * reverseX + x % 10;
                 x = x / 10;
             }
         }
         
-        return reverse_x;
+        return reverseX;
     }
 
     public static void main(String[] args) {
@@ -71,7 +71,7 @@ class ReverseInteger {
                 // Test Case #5: 0
                 int result = reverse(x);
                 System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                System.out.println("Reverse integer = " + result);
                 System.out.println();
             }
             
