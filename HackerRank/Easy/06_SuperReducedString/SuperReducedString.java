@@ -95,7 +95,7 @@ public class SuperReducedString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 05_TwoStrings as source directory.");
+            System.out.println("File not found: Open the project with 06_SuperReducedString as source directory.");
 
         }
 

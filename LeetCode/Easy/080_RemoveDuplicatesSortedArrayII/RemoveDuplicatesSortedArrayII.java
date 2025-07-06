@@ -101,7 +101,7 @@ public class RemoveDuplicatesSortedArrayII {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 344_ReverseString as source directory.");
+            System.out.println("File not found: Open the project with 080_RemoveDuplicatesSortedArrayII as source directory.");
 
         }
 

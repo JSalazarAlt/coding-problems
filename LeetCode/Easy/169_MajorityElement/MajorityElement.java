@@ -89,7 +89,7 @@ public class MajorityElement {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 344_ReverseString as source directory.");
+            System.out.println("File not found: Open the project with 169_MajorityElement as source directory.");
 
         }
 
