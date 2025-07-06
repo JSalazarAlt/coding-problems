@@ -42,17 +42,17 @@ class LongestSubstringNoRepeatingCharacters {
 
         // Expand the sliding window using the right pointer
         while (right < s.length()) {
-            char c_right = s.charAt(right);
-            char c_left = s.charAt(left);
+            char charRight = s.charAt(right);
+            char charLeft = s.charAt(left);
             
             // If character is not in current window, expand window
-            if (!set.contains(c_right)) {
-                set.add(c_right);
+            if (!set.contains(charRight)) {
+                set.add(charRight);
                 max = Math.max(max, set.size());
                 right++;
             } else {
                 // If character is duplicate, shrink window from left
-                set.remove(c_left);
+                set.remove(charLeft);
                 left++;
             }
         }
