@@ -12,7 +12,7 @@ public class RemoveDuplicatesSortedArrayII {
      * in-place such that each unique element appears at most twice. Returns the number
      * of elements after removals.
      *
-     * Approach:
+     * Approach (Duplicates Counter + Boolean Flag - Shift)
      * 1. Start from the second element since first element is always kept.
      * 2. Use a boolean flag to track if we've seen one duplicate of current element.
      * 3. For each element, compare with previous element.
@@ -24,39 +24,46 @@ public class RemoveDuplicatesSortedArrayII {
      * - Single pass through the array starting from index 1.
      *
      * Space Complexity: O(1)
-     * - Only using constant extra space for counter and boolean variables.
+     * - Only using constant extra spaces for array length, excess duplicates counter, and boolean variables.
      *
      * @param nums The sorted array to remove excess duplicates from in-place.
      * @return The new length of the array after removing excess duplicates.
      */
-    public static int removeDuplicates(int[] nums) {
+    public static int removeExcessDuplicates(int[] nums) {
+
+        // Length of the sorted array
+        int n = nums.length;
         // Counter for elements to remove (excess duplicates)
-        int count = 0;
+        int excessDuplicatesCount = 0;
         // Flag to track if we've seen one duplicate of current element
         boolean seen = false;
         
         // Start from second element since first is always kept
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < n; i++) {
             // Check if current element equals previous element
             if (nums[i] == nums[i - 1]) {
                 // If this is the first duplicate we've seen
                 if (!seen){
                     seen = true;
                     // Keep this duplicate (shift left by removal count)
-                    nums[i - count] = nums[i];
+                    nums[i - excessDuplicatesCount] = nums[i];
                 } else {
                     // This is an excess duplicate, mark for removal
-                    count++;
+                    excessDuplicatesCount++;
                 }
             } else {
                 // Different element, keep it and reset seen flag
-                nums[i - count] = nums[i];
+                nums[i - excessDuplicatesCount] = nums[i];
                 seen = false;
             }
         }
+
+        // Compute k: the array length after removing excess duplicates
+        int k = n - excessDuplicatesCount;
         
-        // Return new array length after removing excess duplicates
-        return nums.length - count;
+        // Return k
+        return k;
+
     }
 
     public static void main(String[] args) {
@@ -82,16 +89,25 @@ public class RemoveDuplicatesSortedArrayII {
                     nums[i] = scanner.nextInt();
                 }
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: nums = [1, 1, 2, 2, 3] ; k = 2
-                // Test Case #2: nums = [0, 0, 1, 1, 2, 3, 3] ; k = 7
-                int k = removeDuplicates(nums);
-                System.out.println("Test Case #" + test + ":");
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array for the test case
                 System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                System.out.println(nums[n - 1] + "]");
+
+                // Remove excess duplicates from the array
+                int k = removeExcessDuplicates(nums);
+
+                // Print the array without excess duplicates for the corresponding test case
+                System.out.print("Array without excess duplicates: nums = [");
                 for (int i = 0; i < k - 1; i++) {
                     System.out.print(nums[i] + ", ");
                 }
-                System.out.print(nums[k - 1] + "] ; k = " + k);
+                System.out.print(nums[k - 1] + "] | k = " + k);
                 System.out.println("\n");
 
             }

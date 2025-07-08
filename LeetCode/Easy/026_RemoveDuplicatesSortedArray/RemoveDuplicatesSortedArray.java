@@ -12,7 +12,7 @@ public class RemoveDuplicatesSortedArray {
      * in-place such that each unique element appears only once. Returns the number
      * of unique elements.
      *
-     * Approach:
+     * Approach (Duplicates Counter - Shift):
      * 1. Start from the second element (index 1) since first element is always unique.
      * 2. Compare each element with its previous element.
      * 3. If they are equal, increment duplicate count.
@@ -23,29 +23,37 @@ public class RemoveDuplicatesSortedArray {
      * - Single pass through the array starting from index 1.
      *
      * Space Complexity: O(1)
-     * - Only using constant extra space for counter variable.
+     * - Only using constant extra spaces for input array length, duplicates counter, and k.
      *
      * @param nums The sorted array to remove duplicates from in-place.
      * @return The new length of the array after removing duplicates.
      */
     public static int removeDuplicates(int[] nums) {
+
+        // Length of the sorted array
+        int n = nums.length;
+        
         // Counter for duplicate elements found
-        int count = 0;
+        int duplicatesCounter = 0;
         
         // Start from second element since first is always unique
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < n; i++) {
             // Check if current element is duplicate of previous
             if (nums[i] == nums[i - 1]) {
                 // Increment duplicate counter
-                count += 1;
+                duplicatesCounter += 1;
             } else {
                 // Current element is unique, shift it left by duplicate count
-                nums[i - count] = nums[i];
+                nums[i - duplicatesCounter] = nums[i];
             }
         }
+
+        // Compute k: the array length after removing duplicates
+        int k = n - duplicatesCounter;
         
-        // Return new array length after removing duplicates
-        return nums.length - count;
+        // Return k
+        return k;
+        
     }
 
     public static void main(String[] args) {
@@ -71,16 +79,25 @@ public class RemoveDuplicatesSortedArray {
                     nums[i] = scanner.nextInt();
                 }
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: nums = [1, 2] ; k = 2
-                // Test Case #2: nums = [0, 1, 2, 3, 4] ; k = 5
-                int k = removeDuplicates(nums);
-                System.out.println("Test Case #" + test + ":");
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array for the test case
                 System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                System.out.println(nums[n - 1] + "]");
+
+                // Remove duplicates from the array
+                int k = removeDuplicates(nums);
+
+                // Print the array without duplicates for the corresponding test case
+                System.out.print("Array without duplicates: nums = [");
                 for (int i = 0; i < k - 1; i++) {
                     System.out.print(nums[i] + ", ");
                 }
-                System.out.print(nums[k - 1] + "] ; k = " + k);
+                System.out.print(nums[k - 1] + "] | k = " + k);
                 System.out.println("\n");
 
             }
