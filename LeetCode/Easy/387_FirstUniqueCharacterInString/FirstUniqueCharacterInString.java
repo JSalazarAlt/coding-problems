@@ -93,7 +93,7 @@ public class FirstUniqueCharacterInString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 344_ReverseString as source directory.");
+            System.out.println("File not found: Open the project with 387_FirstUniqueCharacterInString as source directory.");
 
         }
         
