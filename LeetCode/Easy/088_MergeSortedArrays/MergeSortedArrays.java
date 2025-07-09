@@ -12,7 +12,7 @@ public class MergeSortedArrays {
      * integers m and n, representing the number of elements in nums1 and nums2 respectively,
      * merges nums2 into nums1 as one sorted array. The final sorted array is stored inside nums1.
      *
-     * Approach (Three Pointers - Backward):
+     * Approach (Three Pointers - Backward Processing):
      * 1. Use three pointers: i (end of nums1 elements), j (end of nums2), k (end of merged array).
      * 2. Start from the end of both arrays to avoid overwriting unprocessed elements.
      * 3. Compare elements from the end and place the larger one at position k.
@@ -96,7 +96,7 @@ public class MergeSortedArrays {
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
                 
-                // Print the first input array for the test case
+                // Print the first input array
                 System.out.print("nums1: [");
                 for (int i = 0; i < m - n - 1; i++) {
                     System.out.print(nums1[i] + ", ");
@@ -104,7 +104,7 @@ public class MergeSortedArrays {
                 if (m - n > 0) System.out.print(nums1[m - n - 1]);
                 System.out.print("] | ");
                 
-                // Print the second input array for the test case
+                // Print the second input array
                 System.out.print("nums2: [");
                 for (int i = 0; i < n - 1; i++) {
                     System.out.print(nums2[i] + ", ");
@@ -115,7 +115,7 @@ public class MergeSortedArrays {
                 // Merge both sorted arrays
                 merge(nums1, m - n, nums2, n);
                 
-                // Print the merged sorted array for the corresponding test case
+                // Print the merged sorted array
                 System.out.print("Merged sorted array: nums1 = [");
                 for (int i = 0; i < m - 1; i++) {
                     System.out.print(nums1[i] + ", ");

@@ -12,7 +12,7 @@ class ReverseInteger {
      * If reversing x causes the value to go outside the signed 32-bit integer range
      * [-2³¹, 2³¹ - 1], then return 0.
      *
-     * Approach:
+     * Approach (Backward Processing - Divide x by 10):
      * 1. Initialize result variable to store the reversed number.
      * 2. Extract digits from right to left using modulo operation.
      * 3. Before each multiplication by 10, check for potential overflow.
@@ -29,6 +29,7 @@ class ReverseInteger {
      * @return The reversed integer, or 0 if overflow occurs.
      */
     public static int reverse(int x) {
+        
         // Initialize the reversed number
         int reverseX = 0;
         
@@ -44,7 +45,9 @@ class ReverseInteger {
             }
         }
         
+        // Return the reverse integer
         return reverseX;
+
     }
 
     public static void main(String[] args) {
@@ -63,16 +66,19 @@ class ReverseInteger {
                 // Read the integer to reverse
                 int x = scanner.nextInt();
                 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: 321
-                // Test Case #2: -321
-                // Test Case #3: 21
-                // Test Case #4: 0
-                // Test Case #5: 0
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the integer to reverse
+                System.out.println("x = " + x);
+
+                // Compute the reverse integer
                 int result = reverse(x);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println("Reverse integer = " + result);
+
+                // Print the reverse integer
+                System.out.println("Reverse integer: x = " + result);
                 System.out.println();
+
             }
             
             // Close the Scanner object

@@ -12,7 +12,7 @@ public class ThreeSumClosest {
      * Given an integer array nums of length n and an integer target, finds three integers
      * in nums such that the sum is closest to target. Returns the sum of the three integers.
      *
-     * Approach:
+     * Approach (Sort Array - Two Pointers):
      * 1. Sort the array to enable two-pointer technique.
      * 2. For each element nums[i], use two pointers (left and right) to find the pair
      *    that makes the sum closest to target.
@@ -32,14 +32,16 @@ public class ThreeSumClosest {
      * @return The sum of three integers closest to target.
      */
     public static int threeSumClosest(int[] nums, int target) {
-        
-        // Sort the array to enable two-pointer technique
-        Arrays.sort(nums);
 
-        // Get array length and initialize tracking variables
+        // Length of the input array
         int n = nums.length;
+
+        // Initialize tracking variables
         int minDistance = Integer.MAX_VALUE;
-        int result = 0;
+        int sumClosest = 0;
+
+        // Sort the array of numbers
+        Arrays.sort(nums);
 
         // Iterate over the array to establish a reference nums[i]
         for (int i = 0; i < n; i++) {
@@ -55,7 +57,7 @@ public class ThreeSumClosest {
                 
                 // Update result if current sum is closer to target
                 if (Math.abs(diff) < minDistance) {
-                    result = sum;
+                    sumClosest = sum;
                     minDistance = Math.abs(diff);
                 }
                 
@@ -70,9 +72,12 @@ public class ThreeSumClosest {
                     left++;
                 }
             }
+
         }
         
-        return result;
+        // Return the sum of three numbers which is the closest to the target
+        return sumClosest;
+
     }
 
     public static void main(String[] args) {
@@ -100,13 +105,23 @@ public class ThreeSumClosest {
                 // Read the target
                 int target = scanner.nextInt();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: 2
-                // Test Case #2: 0
-                int result = threeSumClosest(nums, target);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array
+                System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                System.out.println(nums[n - 1] + "]");
+
+                // Find the sum of three numbers which is closest to the target
+                int sumClosest = threeSumClosest(nums, target);
+
+                // Print the sum of those three numbers
+                System.out.println("Sum of three numbers closest to " + target + ": sum = " + sumClosest);
                 System.out.println();
+
             }
             
             // Close the Scanner object

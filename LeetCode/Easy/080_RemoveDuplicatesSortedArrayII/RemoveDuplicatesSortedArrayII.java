@@ -92,7 +92,7 @@ public class RemoveDuplicatesSortedArrayII {
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
-                // Print the input array for the test case
+                // Print the input array
                 System.out.print("nums = [");
                 for (int i = 0; i < n - 1; i++) {
                     System.out.print(nums[i] + ", ");
@@ -102,7 +102,7 @@ public class RemoveDuplicatesSortedArrayII {
                 // Remove excess duplicates from the array
                 int k = removeExcessDuplicates(nums);
 
-                // Print the array without excess duplicates for the corresponding test case
+                // Print the array without excess duplicates
                 System.out.print("Array without excess duplicates: nums = [");
                 for (int i = 0; i < k - 1; i++) {
                     System.out.print(nums[i] + ", ");

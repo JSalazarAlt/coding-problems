@@ -31,18 +31,21 @@ public class MinimumSizeSubarraySum {
      */
     public static int minSubArrayLen(int target, int[] nums) {
 
+        // Length of the input array
+        int n = nums.length;
+
         // Initialize sliding window pointers
         int left = 0;
         int right = 0;
 
         // Initialize minimum length to impossible value (array length + 1)
-        int minLength = nums.length + 1;
+        int minLength = n + 1;
 
         // Initialize current window sum
         int sum = 0;
 
         // Expand sliding window using right pointer
-        while (right < nums.length) {
+        while (right < n) {
             // Add current element to window sum
             sum += nums[right];
             
@@ -54,13 +57,14 @@ public class MinimumSizeSubarraySum {
                 minLength = Math.min(minLength, right - left + 1);
                 // Remove leftmost element from window
                 sum -= nums[left];
+                // Remove rightmost element from window because we will sum it again
                 sum -= nums[right];
                 left++;
             }
         }
 
-        // Return minimum length found, or 0 if no valid subarray exists
-        return minLength == (nums.length + 1) ? 0 : minLength;
+        // Return minimum length or 0 if no valid subarray exists
+        return minLength == (n + 1) ? 0 : minLength;
 
     }
 
@@ -89,15 +93,27 @@ public class MinimumSizeSubarraySum {
                 // Read the target
                 int target = scanner.nextInt();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: 2
-                // Test Case #2: 1
-                // Test Case #3: 0
-                // Test Case #4: 8
-                int result = minSubArrayLen(target, nums);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);   
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array
+                System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                if (n > 0) System.out.print(nums[n - 1]);
+                System.out.print("] | ");
+
+                // Print the target
+                System.out.println("target = " + target);
+                
+                // Find the minimum size of the subarray that sum up to target
+                int minSize = minSubArrayLen(target, nums);
+
+                // Print the minimum size of the subarray
+                System.out.println("Minimum size of the subarray: minSize = " + minSize);   
                 System.out.println();
+
             }
             
             // Close the Scanner object

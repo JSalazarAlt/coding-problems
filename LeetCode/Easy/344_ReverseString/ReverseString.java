@@ -11,8 +11,8 @@ public class ReverseString {
      * Reverses the input string in-place with O(1) extra memory.
      * The input string is given as an array of characters s.
      *
-     * Approach:
-     * 1. Use two pointers technique with left and right pointers.
+     * Approach: (Temporary Variable - Swap) 
+     * 1. Iterate over the array of characters.
      * 2. Swap characters at positions i and n-1-i.
      * 3. Continue until reaching the middle of the array.
      * 4. The array is modified in-place, no return value needed.
@@ -21,12 +21,13 @@ public class ReverseString {
      * - Single pass through half of the array to perform swaps.
      *
      * Space Complexity: O(1)
-     * - Only using three constant extra spaces for temporary variable (n, i, and temp).
+     * - Only using three constant extra spaces for array length and temporary variable.
      *
      * @param s The array of characters to reverse in-place.
      */
     public static void reverseString(char[] s) {
-        // Get the length of the character array
+        
+        // Length of the input array
         int n = s.length;
         
         // Iterate through the first half of the array
@@ -37,6 +38,7 @@ public class ReverseString {
             s[i] = s[n - 1 - i];
             s[n - 1 - i] = temp;
         }
+
     }
 
     public static void main(String[] args) {
@@ -54,20 +56,24 @@ public class ReverseString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String input = scanner.next();
+                String inputString = scanner.next();
                 
                 // Convert string to character array
-                char[] s = input.toCharArray();
+                char[] chars = inputString.toCharArray();
                 
-                // Apply the reverse function
-                reverseString(s);
-                
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: olleh
-                // Test Case #2: hannaH
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(new String(s));
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input string
+                System.out.println("s = " + inputString);
+
+                // Reverse the string
+                reverseString(chars);
+
+                // Print the reverse string
+                System.out.println("Reverse string: s = " + new String(chars));
                 System.out.println();
+
             }
             
             // Close the Scanner object

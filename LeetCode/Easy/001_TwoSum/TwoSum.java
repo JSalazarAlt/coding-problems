@@ -89,19 +89,20 @@ public class TwoSum {
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
-                // Print the input array for the test case
+                // Print the input array
                 System.out.print("nums = [");
                 for (int i = 0; i < n - 1; i++) {
                     System.out.print(nums[i] + ", ");
                 }
+                System.out.print(nums[n - 1] + "] | ");
                 
-                // Print the target value for the test case
-                System.out.println(nums[n - 1] + "] | target = " + target);
+                // Print the target value
+                System.out.println("target = " + target);
 
                 // Find the indexes of two numbers that add up to target
                 int[] indexes = twoSum(nums, target);
 
-                // Print the indexes of the two numbers for the corresponding test case
+                // Print the indexes of the two numbers
                 System.out.println("Numbers whose sum is " + target + ": indexes = [" + indexes[0] + ", " + indexes[1] + "]");
                 System.out.println();
                 

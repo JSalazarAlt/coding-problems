@@ -12,7 +12,7 @@ public class FirstLastPositionsSortedArray {
      * and ending position of a given target value. If target is not found in the array,
      * returns [-1, -1].
      *
-     * Approach:
+     * Approach (Binary Search - Pointer Forward and Backward):
      * 1. Use binary search to find any occurrence of the target.
      * 2. Once target is found, expand left and right from that position to find boundaries.
      * 3. Move left pointer backwards while elements equal target.
@@ -72,7 +72,9 @@ public class FirstLastPositionsSortedArray {
             }
         }
         
+        // Return the range of the target value in the array
         return range;
+
     }
 
     public static void main(String[] args) {
@@ -100,22 +102,32 @@ public class FirstLastPositionsSortedArray {
                 // Read the target
                 int target = scanner.nextInt();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: [3, 4]
-                // Test Case #2: [-1, -1]
-                // Test Case #3: [-1, -1]
-                int[] result = searchRange(nums, target);
-                System.out.println("Test Case #" + test + ":");
-                System.out.print("[");
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array
+                System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                if (n > 0) System.out.print(nums[n - 1]);
+                System.out.println("]");
+
+                // Find the indexes of the range of the target value
+                int[] range = searchRange(nums, target);
+                
+                // Print the range of the target value in the array
+                System.out.print("All " + target + "s in the array: range = [");
                 for (int i = 0; i < 2; i++) {
                     if (i != 1) {
-                        System.out.print(result[i] + " ");
+                        System.out.print(range[i] + " ");
                     } else {
-                        System.out.print(result[i]);
+                        System.out.print(range[i]);
                     }
                 }         
-                System.out.print("]");
+                System.out.println("]");
                 System.out.println();
+
             }
             
             // Close the Scanner object

@@ -13,7 +13,7 @@ public class FirstUniqueCharacterInString {
      * Given a string s, finds the first non-repeating character in it and returns its index.
      * If it does not exist, returns -1.
      *
-     * Approach:
+     * Approach (HashMap of Frequencies)
      * 1. Create a HashMap to count the frequency of each character in the string.
      * 2. First pass: iterate through the string and populate the frequency map.
      * 3. Second pass: iterate through the string again and find the first character
@@ -31,7 +31,7 @@ public class FirstUniqueCharacterInString {
      */
     public static int firstUniqChar(String s) {
         
-        // Get the length of the input string
+        // Length of the input string
         int n = s.length();
 
         // Create a HashMap to store character frequencies
@@ -53,6 +53,7 @@ public class FirstUniqueCharacterInString {
         
         // No unique character found
         return -1;
+
     }
 
     public static void main(String[] args) {
@@ -70,16 +71,21 @@ public class FirstUniqueCharacterInString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String s = scanner.nextLine();
+                String inputString = scanner.nextLine();
                 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: 0
-                // Test Case #2: 2
-                // Test Case #3: -1
-                int result = firstUniqChar(s);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input string
+                System.out.println(inputString);
+
+                // Find the first unique character of the string
+                int indexFirstUniqueChar = firstUniqChar(inputString);
+                
+                // Print the first unique character
+                System.out.println("First unique character: index = " + indexFirstUniqueChar);
                 System.out.println();
+
             }
             
             // Close the Scanner object

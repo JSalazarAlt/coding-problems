@@ -14,7 +14,7 @@ public class ThreeSum {
      * Given an integer array nums, returns all unique triplets [nums[i], nums[j], nums[k]]
      * such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
      *
-     * Approach:
+     * Approach (Sort Array - Two Pointers):
      * 1. Sort the array to enable two-pointer technique and handle duplicates.
      * 2. For each element nums[i], use two pointers (left and right) to find pairs
      *    that sum to -nums[i].
@@ -34,14 +34,14 @@ public class ThreeSum {
      */
     public static List<List<Integer>> threeSum(int[] nums) {
         
+        // Length of the array
+        int n = nums.length;
+
         // Declare and initialize the list of triplets to return
         List<List<Integer>> triplets = new ArrayList<>();
 
         // Sort the array of numbers
         Arrays.sort(nums);
-
-        // Retrieve the length of the array
-        int n = nums.length;
 
         // Iterate over the array to establish a target reference nums[i]
         for (int i = 0; i < n; i++) {
@@ -51,7 +51,7 @@ public class ThreeSum {
                 continue;
             }
 
-            // Initialize the left and right pointers to apply the two pointers algorithm
+            // Initialize the left and right pointers to apply the two pointers technique
             int left = i + 1;
             int right = n - 1;
 
@@ -62,7 +62,6 @@ public class ThreeSum {
                 // If the sum satisfies the condition, add the triplet and skip duplicates
                 if (sum == 0) {
                     triplets.add(Arrays.asList(nums[i], nums[left], nums[right]));
-
                     left++;
                     right--;
 
@@ -84,7 +83,9 @@ public class ThreeSum {
             }
         }
 
+        // Return all the unique triplets that add up to zero
         return triplets;
+
     }
 
     public static void main(String[] args) {
@@ -109,13 +110,21 @@ public class ThreeSum {
                     nums[i] = scanner.nextInt();
                 }
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: [[-1, -1, 2], [-1, 0, 1]]
-                // Test Case #2: []
-                // Test Case #3: [[0, 0, 0]]
-                List<List<Integer>> result = threeSum(nums);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input array
+                System.out.print("nums = [");
+                for (int i = 0; i < n - 1; i++) {
+                    System.out.print(nums[i] + ", ");
+                }
+                System.out.println(nums[n - 1] + "]");
+
+                // Find all the unique triplets that add up to zero
+                List<List<Integer>> triplets = threeSum(nums);
+                
+                // Print all the unique triplets
+                System.out.println("Triplets that sum to zero: triplets = " + triplets);
                 System.out.println();
                 
             }

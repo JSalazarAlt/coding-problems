@@ -11,7 +11,7 @@ class LongestSubstringNoRepeatingCharacters {
      *
      * Given a string s, finds the length of the longest substring without repeating characters.
      *
-     * Approach (Sliding Window):
+     * Approach (HashSet - Sliding Window):
      * 1. Use two pointers (left and right) to maintain a sliding window.
      * 2. Use a HashSet to track characters in the current window.
      * 3. Expand the window by moving right pointer if character is not in set.
@@ -21,8 +21,8 @@ class LongestSubstringNoRepeatingCharacters {
      * Time Complexity: O(n)
      * - Each character is visited at most twice (once by right, once by left pointer).
      *
-     * Space Complexity: O(min(m, n))
-     * - Where m is the size of the character set and n is the length of the string.
+     * Space Complexity: O(m)
+     * - Where m is the size of unique characters set.
      * - HashSet stores at most min(m, n) characters.
      *
      * @param s The input string.
@@ -30,8 +30,11 @@ class LongestSubstringNoRepeatingCharacters {
      */
     public static int lengthOfLongestSubstring(String s) {
 
+        // Length of the input string
+        int n = s.length();
+
         // Initialize the result to track maximum length
-        int max = 0;
+        int maxLength = 0;
 
         // Declare a HashSet for tracking the appearing characters in current window
         Set<Character> set = new HashSet<>();
@@ -41,14 +44,14 @@ class LongestSubstringNoRepeatingCharacters {
         int left = 0;
 
         // Expand the sliding window using the right pointer
-        while (right < s.length()) {
+        while (right < n) {
 
             char charRight = s.charAt(right);
             
             // If character is not in current window, expand window
             if (!set.contains(charRight)) {
                 set.add(charRight);
-                max = Math.max(max, set.size());
+                maxLength = Math.max(maxLength, set.size());
                 right++;
             } else {
                 // If character is duplicate, shrink window from left
@@ -59,7 +62,8 @@ class LongestSubstringNoRepeatingCharacters {
             
         }
 
-        return max;
+        // Return the maximum length of the substring with unique characters
+        return maxLength;
     }
 
     public static void main(String[] args) {
@@ -77,15 +81,19 @@ class LongestSubstringNoRepeatingCharacters {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String s = scanner.nextLine();
+                String inputString = scanner.nextLine();
                 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: 3
-                // Test Case #2: 1
-                // Test Case #3: 3
-                int result = lengthOfLongestSubstring(s);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input string
+                System.out.println("s = " + inputString);
+
+                // Find the maximum length of the substring with unique characters
+                int maxLength = lengthOfLongestSubstring(inputString);
+
+                // Print the maximum length of the substring with unique characters
+                System.out.println("Maximum length of substring with unique characters: maxLength = " + maxLength);
                 System.out.println();
             }
             

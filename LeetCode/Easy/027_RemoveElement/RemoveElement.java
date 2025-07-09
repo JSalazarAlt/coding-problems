@@ -83,20 +83,20 @@ public class RemoveElement {
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
-                // Print the input array for the test case
+                // Print the input array
                 System.out.print("nums = [");
                 for (int i = 0; i < n - 1; i++) {
                     System.out.print(nums[i] + ", ");
                 }
                 System.out.print(nums[n - 1] + "] | ");
 
-                // Print the value to remove from the array for the test case
+                // Print the value to remove from the array
                 System.out.println("val = " + val);
 
                 // Remove val elements from the array
                 int k = removeElement(nums, val);
 
-                // Print the array without val ocurrences for the corresponding test case
+                // Print the array without val ocurrences
                 System.out.print("Array without " + val + ": nums = [");
                 for (int i = 0; i < k - 1; i++) {
                     System.out.print(nums[i] + ", ");

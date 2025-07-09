@@ -81,7 +81,7 @@ public class MajorityElement {
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
-                // Print the input array for the test case
+                // Print the input array
                 System.out.print("nums: [");
                 for (int i = 0; i < n; i++) {
                     System.out.print(nums[i] + ", ");
@@ -92,7 +92,7 @@ public class MajorityElement {
                 // Find the majority element in the array
                 int k = majorityElement(nums);
 
-                // Print the majority element for the corresponding test case
+                // Print the majority element
                 System.out.println("Majority element: k = " + k);
                 System.out.println();
 
