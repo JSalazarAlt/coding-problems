@@ -129,7 +129,7 @@ public class ThreeSumClosest {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 016_ThreeSumClosest as source directory.");
+            System.out.println("File not found: Open 016_ThreeSumClosest as source directory.");
 
         }
         

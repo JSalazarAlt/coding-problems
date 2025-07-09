@@ -11,7 +11,7 @@ public class HackerRankInString {
      * Determines if the string "hackerrank" can be formed as a subsequence from the input string.
      * A subsequence maintains the relative order of characters but doesn't need to be contiguous.
      *
-     * Approach:
+     * Approach (Remove chars from Target String when found in Input String):
      * 1. Initialize target string "hackerrank" to match against.
      * 2. Iterate through the input string character by character.
      * 3. When a character matches the first character of remaining target, remove it from target.
@@ -22,18 +22,21 @@ public class HackerRankInString {
      * - Single pass through the input string.
      *
      * Space Complexity: O(1)
-     * - Using constant space (target string is fixed size).
+     * - Only using constant extra spaces for input array length and target string.
      *
      * @param s The input string to search within.
      * @return "YES" if "hackerrank" can be formed as subsequence, "NO" otherwise.
      */
     public static String hackerrankInString(String s) {
 
+        // Length of the input string
+        int n = s.length();
+
         // Initialize the target subsequence to find
         String target = "hackerrank";
 
         // Iterate through each character in the input string
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < n; i++) {
             // Check if current character matches the next expected character in target
             if (s.charAt(i) == target.charAt(0)) {
                 // If more characters remain in target, remove the matched character
@@ -67,13 +70,19 @@ public class HackerRankInString {
                 // Read the string
                 String s = scanner.next();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: YES
-                // Test Case #2: NO
-                String result = hackerrankInString(s);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input string
+                System.out.println("s = " + s);
+
+                // Check if the string contains hackerrank in it
+                String containsWord = hackerrankInString(s);
+                
+                // Print if the string contains hackerrank in it
+                System.out.println(containsWord);
                 System.out.println();
+
             }
             
             // Close the Scanner object
@@ -81,7 +90,7 @@ public class HackerRankInString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 04_HackerRankInString as source directory.");
+            System.out.println("File not found: Open 04_HackerRankInString as source directory.");
 
         }
 

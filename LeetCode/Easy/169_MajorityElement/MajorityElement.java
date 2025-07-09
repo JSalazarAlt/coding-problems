@@ -103,7 +103,7 @@ public class MajorityElement {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 169_MajorityElement as source directory.");
+            System.out.println("File not found: Open 169_MajorityElement as source directory.");
 
         }
 

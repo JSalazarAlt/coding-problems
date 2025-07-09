@@ -103,7 +103,8 @@ public class TwoSum {
                 int[] indexes = twoSum(nums, target);
 
                 // Print the indexes of the two numbers
-                System.out.println("Numbers whose sum is " + target + ": indexes = [" + indexes[0] + ", " + indexes[1] + "]");
+                System.out.println("Numbers whose sum is " + target + ": indexes = [" + 
+                                    indexes[0] + ", " + indexes[1] + "]");
                 System.out.println();
                 
             }
@@ -113,7 +114,7 @@ public class TwoSum {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 016_ThreeSumClosest as source directory.");
+            System.out.println("File not found: Open 001_TwoSum as source directory.");
 
         }
 

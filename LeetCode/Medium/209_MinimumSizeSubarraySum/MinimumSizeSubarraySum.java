@@ -121,7 +121,7 @@ public class MinimumSizeSubarraySum {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 209_MinimumSizeSubarraySum as source directory.");
+            System.out.println("File not found: Open 209_MinimumSizeSubarraySum as source directory.");
 
         }
 

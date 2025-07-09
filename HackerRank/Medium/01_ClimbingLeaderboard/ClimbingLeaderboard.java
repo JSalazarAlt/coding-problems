@@ -14,7 +14,7 @@ public class ClimbingLeaderboard {
      * and a list of player scores (player), we should return a list of the player's ranks
      * after each game.
      *
-     * Approach:
+     * Approach (Remove Duplicates - Modify Binary Search):
      * 1. Remove duplicates of the ranked list to build a list of unique scores (newRanked), 
      *    which represents distinct ranking positions.
      * 2. For each player's score:
@@ -44,8 +44,8 @@ public class ClimbingLeaderboard {
         int n = ranked.size();
         int m = player.size();
         
-        // Declare the list of integers to return
-        List<Integer> result = new ArrayList<Integer>();
+        // Declare the list of players ranks to return
+        List<Integer> playersRanks = new ArrayList<Integer>();
         
         // Declare a new list of ranks without duplicates
         List<Integer> newRanked = new ArrayList<Integer>();
@@ -61,15 +61,16 @@ public class ClimbingLeaderboard {
         // Iterate over the players' scores
         for (int i = 0; i < m; i++) {
             if (player.get(i) > newRanked.get(0)) {
-                result.add(1);
+                playersRanks.add(1);
             } else if (player.get(i) < newRanked.get(newRanked.size() - 1)) {
-                result.add(newRanked.size() + 1);
+                playersRanks.add(newRanked.size() + 1);
             } else {
-                result.add(modifiedBinarySearch(newRanked, player.get(i)));
+                playersRanks.add(modifiedBinarySearch(newRanked, player.get(i)));
             }
         }
         
-        return result;
+        // Return the list of players ranks
+        return playersRanks;
         
     }
     
@@ -141,13 +142,22 @@ public class ClimbingLeaderboard {
                     player.add(scanner.nextInt());
                 }
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: [6, 4, 2, 1]
-                // Test Case #2: [6, 5, 4, 2, 1]
-                List<Integer> result = climbingLeaderboard(ranked, player);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input ranked array
+                System.out.print("ranked = " + ranked + " | ");
+
+                // Print the input player array
+                System.out.println("player = " + player);
+
+                // Compute the list of players ranks
+                List<Integer> playersRanks = climbingLeaderboard(ranked, player);
+                
+                // Print the list of players ranks
+                System.out.println(playersRanks);
                 System.out.println();
+
             }
             
             // Close the Scanner object

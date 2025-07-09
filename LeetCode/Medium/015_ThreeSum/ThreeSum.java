@@ -134,7 +134,7 @@ public class ThreeSum {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 015_ThreeSum as source directory.");
+            System.out.println("File not found: Open 015_ThreeSum as source directory.");
 
         }
 

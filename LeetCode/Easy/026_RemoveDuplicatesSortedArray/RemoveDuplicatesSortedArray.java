@@ -107,7 +107,7 @@ public class RemoveDuplicatesSortedArray {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 026_RemoveDuplicatesSortedArray as source directory.");
+            System.out.println("File not found: Open 026_RemoveDuplicatesSortedArray as source directory.");
 
         }
         

@@ -112,7 +112,7 @@ public class RotateArray {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 189_RotateArray as source directory.");
+            System.out.println("File not found: Open 189_RotateArray as source directory.");
 
         }
 

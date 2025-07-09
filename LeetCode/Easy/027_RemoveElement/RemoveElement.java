@@ -111,7 +111,7 @@ public class RemoveElement {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 027_RemoveElement as source directory.");
+            System.out.println("File not found: Open 027_RemoveElement as source directory.");
 
         }
 

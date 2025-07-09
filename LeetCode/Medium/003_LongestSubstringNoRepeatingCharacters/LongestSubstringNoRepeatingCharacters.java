@@ -11,7 +11,7 @@ class LongestSubstringNoRepeatingCharacters {
      *
      * Given a string s, finds the length of the longest substring without repeating characters.
      *
-     * Approach (HashSet - Sliding Window):
+     * Approach (HashSet of Unique Characters - Sliding Window):
      * 1. Use two pointers (left and right) to maintain a sliding window.
      * 2. Use a HashSet to track characters in the current window.
      * 3. Expand the window by moving right pointer if character is not in set.
@@ -81,20 +81,21 @@ class LongestSubstringNoRepeatingCharacters {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String inputString = scanner.nextLine();
+                String s = scanner.nextLine();
                 
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
                 // Print the input string
-                System.out.println("s = " + inputString);
+                System.out.println("s = " + s);
 
                 // Find the maximum length of the substring with unique characters
-                int maxLength = lengthOfLongestSubstring(inputString);
+                int maxLength = lengthOfLongestSubstring(s);
 
                 // Print the maximum length of the substring with unique characters
                 System.out.println("Maximum length of substring with unique characters: maxLength = " + maxLength);
                 System.out.println();
+                
             }
             
             // Close the Scanner object
@@ -102,7 +103,7 @@ class LongestSubstringNoRepeatingCharacters {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 003_LongestSubstringNoRepeatingCharacters as source directory.");
+            System.out.println("File not found: Open 003_LongestSubstringNoRepeatingCharacters as source directory.");
 
         }
 

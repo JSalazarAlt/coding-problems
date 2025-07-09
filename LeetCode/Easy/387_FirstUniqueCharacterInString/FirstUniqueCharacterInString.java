@@ -71,16 +71,16 @@ public class FirstUniqueCharacterInString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String inputString = scanner.nextLine();
+                String s = scanner.nextLine();
                 
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
                 // Print the input string
-                System.out.println(inputString);
+                System.out.println(s);
 
                 // Find the first unique character of the string
-                int indexFirstUniqueChar = firstUniqChar(inputString);
+                int indexFirstUniqueChar = firstUniqChar(s);
                 
                 // Print the first unique character
                 System.out.println("First unique character: index = " + indexFirstUniqueChar);
@@ -93,7 +93,7 @@ public class FirstUniqueCharacterInString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 387_FirstUniqueCharacterInString as source directory.");
+            System.out.println("File not found: Open 387_FirstUniqueCharacterInString as source directory.");
 
         }
         

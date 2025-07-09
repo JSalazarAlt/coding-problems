@@ -13,7 +13,7 @@ public class TwoStrings {
      * Determines if two strings share at least one common character.
      * Returns "YES" if they share a common character, "NO" otherwise.
      *
-     * Approach:
+     * Approach (HashSet of Unique Characters First String):
      * 1. Create a HashSet to store unique characters from the first string.
      * 2. Iterate through the first string and add each character to the set.
      * 3. Iterate through the second string and check if any character exists in the set.
@@ -74,13 +74,22 @@ public class TwoStrings {
                 // Read the string
                 String s2 = scanner.next();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: YES
-                // Test Case #2: NO
-                String result = twoStrings(s1, s2);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println(result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the first input string
+                System.out.print("s1 = " + s1 + " | ");
+
+                // Print the second input string
+                System.out.println("s2 = " + s2);
+
+                // Check if the two strings have one common substring
+                String commonSubString = twoStrings(s1, s2);
+                
+                // Print if the two strings have one common substring
+                System.out.println(commonSubString);
                 System.out.println();
+
             }
             
             // Close the Scanner object
@@ -88,7 +97,7 @@ public class TwoStrings {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 05_TwoStrings as source directory.");
+            System.out.println("File not found: Open 05_TwoStrings as source directory.");
 
         }
 

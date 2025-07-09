@@ -31,8 +31,10 @@ public class SuperReducedString {
      */
     public static String superReducedString(String s) {
         
-        // Get initial string length and set pointer to second character
+        // Length of the input string 
         int n = s.length();
+        
+        // Set pointer to second character
         int i = 1;
         
         // Traverse the string looking for adjacent identical characters
@@ -78,16 +80,19 @@ public class SuperReducedString {
                 // Read the string
                 String s = scanner.next();
 
-                // Print the result for the corresponding test case. The results should be:
-                // Test Case #1: abd
-                // Test Case #2: Empty String
-                // Test Case #3: Empty String
-                // Test Case #4: Empty String
-                // Test Case #5: Empty String
-                String result = superReducedString(s);
-                System.out.println("Test Case #" + test + ":");
-                System.out.println("Reduced string = " + result);
+                // Print the number of test case
+                System.out.print("Test Case #" + test + ": ");
+
+                // Print the input string
+                System.out.println("s = " + s);
+
+                // Reduce the string
+                String reducedString = superReducedString(s);
+                
+                // Print if the two strings have one common substring
+                System.out.println("Reduced string = " + reducedString);
                 System.out.println();
+
             }
             
             // Close the Scanner object
@@ -95,7 +100,7 @@ public class SuperReducedString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 06_SuperReducedString as source directory.");
+            System.out.println("File not found: Open 06_SuperReducedString as source directory.");
 
         }
 

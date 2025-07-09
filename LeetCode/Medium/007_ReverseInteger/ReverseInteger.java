@@ -86,7 +86,7 @@ class ReverseInteger {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 007_ReverseInteger as source directory.");
+            System.out.println("File not found: Open 007_ReverseInteger as source directory.");
 
         }
 

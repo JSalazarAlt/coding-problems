@@ -56,16 +56,16 @@ public class ReverseString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the string input
-                String inputString = scanner.next();
+                String s = scanner.next();
                 
                 // Convert string to character array
-                char[] chars = inputString.toCharArray();
+                char[] chars = s.toCharArray();
                 
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
 
                 // Print the input string
-                System.out.println("s = " + inputString);
+                System.out.println("s = " + s);
 
                 // Reverse the string
                 reverseString(chars);
@@ -81,7 +81,7 @@ public class ReverseString {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 344_ReverseString as source directory.");
+            System.out.println("File not found: Open 344_ReverseString as source directory.");
 
         }
         
