@@ -165,7 +165,7 @@ public class ClimbingLeaderboard {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("File not found: Open the project with 01_ClimbingLeaderboard as source directory.");
+            System.out.println("File not found: Open 01_ClimbingLeaderboard as source directory.");
 
         }
 
