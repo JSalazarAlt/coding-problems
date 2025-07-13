@@ -48,10 +48,10 @@ public class FirstOcurrenceInString {
             for (int test = 1; test <= t; test++) {
                 
                 // Read the first string input
-                String haystack = scanner.next();
+                String haystack = scanner.nextLine();
 
                 // Read the second string input
-                String needle = scanner.next();
+                String needle = scanner.nextLine();
                 
                 // Print the number of test case
                 System.out.print("Test Case #" + test + ": ");
