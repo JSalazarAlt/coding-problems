@@ -12,10 +12,15 @@ Puzzles/
 │   ├── Easy/
 │   ├── Medium/
 │   └── Hard/
-└── HackerRank/
-    ├── Easy/
-    ├── Medium/
-    └── Hard/
+├── HackerRank/
+│   ├── Easy/
+│   ├── Medium/
+│   └── Hard/
+└── Meta/
+    ├── Lv1/
+    ├── Lv2/
+    ├── Lv3/
+    └── Lv4/
 ```
 
 ## Solution Format
@@ -35,17 +40,32 @@ Each coding puzzle folder contains:
 - **Test-Driven**: Each solution includes test cases for validation.
 - **Well-Documented**: Detailed JavaDoc/docstring comments explaining approach.
 - **Complexity Analysis**: Time and space complexity for each solution.
-- **Organized Structure**: Problems categorized by platform and difficulty.
+- **Organized Structure**: Problems categorized by platform and difficulty/level.
+- **PEP-8 Compliant**: Python code follows PEP-8 style guidelines.
 
 ## Usage
 
 To run any solution:
-1. Navigate to the specific problem folder being Puzzles your source directory folder.
-2. Compile and run the solution file.
+1. Navigate to the specific problem folder with Puzzles as your source directory.
+2. Compile and run the solution file:
+   - **Java**: `javac FileName.java && java FileName`
+   - **Python**: `python FileName.py`
 3. The program will automatically read test cases from `test_cases.txt`.
 4. Results will be displayed for each test case.
 
 ## Platforms Covered
 
-- **LeetCode**: Algorithm and data structure problems.
-- **HackerRank**: Programming challenges and contests.
+- **LeetCode**: Algorithm and data structure problems (Easy, Medium, Hard).
+- **HackerRank**: Programming challenges and contests (Easy, Medium, Hard).
+- **Meta**: Coding interview problems organized by difficulty levels (Lv1-Lv4).
+
+## Problem Count
+
+- **LeetCode**: 25+ problems across all difficulty levels
+- **HackerRank**: 10+ problems across Easy and Medium levels
+- **Meta**: 2+ problems across Lv1 and Lv2
+
+## Languages Used
+
+- **Java**: Primary language for LeetCode and HackerRank solutions
+- **Python**: Used for Meta platform solutions and some HackerRank problems
