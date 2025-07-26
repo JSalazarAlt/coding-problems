@@ -26,7 +26,7 @@ Puzzles/
 ## Solution Format
 
 Each coding puzzle folder contains:
-- **Solution file**: Implementation in Java or Python.
+- **Solution file**: Implementation in Java, Python, or JavaScript.
 - **test_cases.txt**: Test cases to validate the solution.
 - Comprehensive documentation with:
   - Problem description and link
@@ -36,12 +36,12 @@ Each coding puzzle folder contains:
 
 ## Features
 
-- **Multiple Languages**: Solutions implemented in Java or Python.
+- **Multiple Languages**: Solutions implemented in Java, Python, or JavaScript.
 - **Test-Driven**: Each solution includes test cases for validation.
-- **Well-Documented**: Detailed JavaDoc/docstring comments explaining approach.
+- **Well-Documented**: Detailed JavaDoc/docstring/JSDoc comments explaining approach.
 - **Complexity Analysis**: Time and space complexity for each solution.
 - **Organized Structure**: Problems categorized by platform and difficulty/level.
-- **PEP-8 Compliant**: Python code follows PEP-8 style guidelines.
+- **Standard Compliant**: Python code follows PEP-8 style guidelines.
 
 ## Usage
 
@@ -50,6 +50,7 @@ To run any solution:
 2. Compile and run the solution file:
    - **Java**: `javac FileName.java && java FileName`
    - **Python**: `python FileName.py`
+   - **JavaScript**: `node FileName.js`
 3. The program will automatically read test cases from `test_cases.txt`.
 4. Results will be displayed for each test case.
 
@@ -69,3 +70,4 @@ To run any solution:
 
 - **Java**: Primary language for LeetCode and HackerRank solutions
 - **Python**: Used for Meta platform solutions and some HackerRank problems
+- **JavaScript**: Used for select LeetCode problems
