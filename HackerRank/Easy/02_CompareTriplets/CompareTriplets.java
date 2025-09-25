@@ -59,7 +59,7 @@ public class CompareTriplets {
     }
 
     public static void main(String[] args) {
-        
+
         // Create test triplets for Alice and Bob
         List<Integer> a = List.of(1, 2, 3);
         List<Integer> b = List.of(3, 2, 1);
@@ -69,6 +69,7 @@ public class CompareTriplets {
         
         // Print the result
         System.out.println("The final scores of Alice and Bob are: " + scores);
+        
     }
 
 }

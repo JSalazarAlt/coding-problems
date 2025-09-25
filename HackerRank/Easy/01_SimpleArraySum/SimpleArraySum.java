@@ -48,6 +48,7 @@ public class SimpleArraySum {
         
         // Print the result
         System.out.println("The sum of the array is: " + sum);
+
     }
 
 }
