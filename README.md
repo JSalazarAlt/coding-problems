@@ -41,7 +41,8 @@ Each coding puzzle folder contains:
 - **Well-Documented**: Detailed JavaDoc/docstring/JSDoc comments explaining approach.
 - **Complexity Analysis**: Time and space complexity for each solution.
 - **Organized Structure**: Problems categorized by platform and difficulty/level.
-- **Standard Compliant**: Python code follows PEP-8 style guidelines.
+- **Standard Compliant**: Python code follows PEP-8 style guidelines with lowercase variable naming.
+- **Automated Testing**: All solutions include test case reading functionality from test_cases.txt files.
 
 ## Usage
 
@@ -58,16 +59,34 @@ To run any solution:
 
 - **LeetCode**: Algorithm and data structure problems (Easy, Medium, Hard).
 - **HackerRank**: Programming challenges and contests (Easy, Medium, Hard).
-- **Meta**: Coding interview problems organized by difficulty levels (Lv1-Lv4).
+- **Meta**: Coding interview puzzles organized by difficulty levels (Lv1-Lv4).
 
 ## Problem Count
 
 - **LeetCode**: 25+ problems across all difficulty levels
 - **HackerRank**: 10+ problems across Easy and Medium levels
-- **Meta**: 2+ problems across Lv1 and Lv2
+- **Meta**: 7 problems in Lv1 level
 
 ## Languages Used
 
 - **Java**: Primary language for LeetCode and HackerRank solutions
-- **Python**: Used for Meta platform solutions and some HackerRank problems
+- **Python**: Used for Meta platform solutions (PEP-8 compliant) and some HackerRank problems
 - **JavaScript**: Used for select LeetCode problems
+
+## Meta Platform Solutions
+
+All Meta Lv1 solutions include:
+- **Comprehensive Documentation**: Problem descriptions from Meta Careers puzzle links
+- **Test Case Integration**: Automated reading from test_cases.txt files
+- **PEP-8 Compliance**: Lowercase variable naming and proper Python style
+- **Algorithm Analysis**: Detailed time and space complexity explanations
+- **Inline Comments**: Step-by-step code explanations
+
+### Meta Lv1 Problems Solved:
+1. **Cafeteria** - Social distancing seating optimization
+2. **Director of Photography** - Artistic photograph arrangement counting
+3. **Kaitenzushi** - Kaiten belt sushi eating maximization
+4. **Rotary Lock I** - Circular lock code entry time minimization
+5. **Score Interference I** - Programming contest minimum problems calculation
+6. **Stack Stabilization I** - Disc deflation for non-decreasing outline
+7. **Uniform Integers** - Single-digit repeated number counting in ranges
