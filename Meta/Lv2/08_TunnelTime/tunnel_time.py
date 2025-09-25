@@ -91,7 +91,7 @@ def read_test_cases(file_path):
     index = 0
     # Read number of test cases
     test_cases = int(lines[index].strip())
-    index += 1
+    index += 2
 
     # List to store all test case data
     data = []
@@ -111,7 +111,7 @@ def read_test_cases(file_path):
         index += 1
         # Read target tunnel time
         k = int(lines[index].strip())
-        index += 1
+        index += 2
         # Store test case data as dictionary
         data.append({'c': c, 'n': n, 'a': a, 'b': b, 'k': k})
 

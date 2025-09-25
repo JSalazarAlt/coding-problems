@@ -1,29 +1,29 @@
-def get_uniform_integer_count_in_interval(A: int, B: int) -> int:
+def get_uniform_integer_count_in_interval(a: int, b: int) -> int:
     """Solve the "Uniform Integers" puzzle from Meta Careers.
     
     A uniform integer is a positive integer which consists of only a single repeated
     digit. For example, 111 and 44 are uniform integers, while 123 and 9339 are not.
-    Given two positive integers A and B, return the number of uniform integers between
-    A and B, inclusive.
+    Given two positive integers a and b, return the number of uniform integers between
+    a and b, inclusive.
     
     Approach (Generate All Uniform Numbers):
     1. For each digit 1-9, generate all uniform numbers of that digit.
     2. Start with single digit, then build longer numbers by appending same digit.
-    3. Count numbers that fall within the range [A, B].
-    4. Stop when generated number exceeds B.
+    3. Count numbers that fall within the range [a, b].
+    4. Stop when generated number exceeds b.
     
-    Time Complexity: O(log B)
-    - For each digit, generate at most log10(B) uniform numbers.
+    Time Complexity: O(log b)
+    - For each digit, generate at most log10(b) uniform numbers.
     
     Space Complexity: O(1)
     - Only using constant extra space for variables.
     
     Args:
-        A: Lower bound of the range (inclusive).
-        B: Upper bound of the range (inclusive).
+        a: Lower bound of the range (inclusive).
+        b: Upper bound of the range (inclusive).
         
     Returns:
-        Count of uniform integers in the range [A, B].
+        Count of uniform integers in the range [a, b].
     """
     # Counter for uniform integers in the range
     number_of_uniforms = 0
@@ -33,9 +33,9 @@ def get_uniform_integer_count_in_interval(A: int, B: int) -> int:
         # Start with single digit uniform number
         num = digit
         # Generate longer uniform numbers by appending same digit
-        while num <= B:
-            # Check if current uniform number is in range [A, B]
-            if num >= A:
+        while num <= b:
+            # Check if current uniform number is in range [a, b]
+            if num >= a:
                 number_of_uniforms += 1
             # Build next uniform number (e.g., 1 -> 11 -> 111)
             num = num * 10 + digit
@@ -47,13 +47,13 @@ def read_test_cases(file_path):
     File format:
     - First line: number of test cases
     - For each test case:
-      - Line 1: A B (space-separated integers representing the range)
+      - Line 1: a b (space-separated integers representing the range)
     
     Args:
         file_path: Path to the test cases file.
         
     Returns:
-        List of dictionaries, each containing 'A' and 'B' for a test case.
+        List of dictionaries, each containing 'a' and 'b' for a test case.
     """
     # Read all lines from the test file
     with open(file_path, 'r') as file:
@@ -63,17 +63,17 @@ def read_test_cases(file_path):
     index = 0
     # Read number of test cases
     test_cases = int(lines[index].strip())
-    index += 1
+    index += 2
 
     # List to store all test case data
     data = []
     # Process each test case
     for _ in range(test_cases):
-        # Read range bounds A and B
-        A, B = map(int, lines[index].strip().split())
-        index += 1
+        # Read range bounds a and b
+        a, b = map(int, lines[index].strip().split())
+        index += 2
         # Store test case data as dictionary
-        data.append({'A': A, 'B': B})
+        data.append({'a': a, 'b': b})
 
     return data
 
@@ -91,11 +91,11 @@ def main():
     # Process each test case
     for i, case in enumerate(test_cases_data, 1):
         # Display test case input
-        print(f"Test Case #{i}: A = {case['A']} | B = {case['B']}")
+        print(f"Test Case #{i}: A = {case['a']} | B = {case['b']}")
         # Calculate count of uniform integers in range
-        uniform_count = get_uniform_integer_count_in_interval(case['A'], case['B'])
+        uniform_count = get_uniform_integer_count_in_interval(case['a'], case['b'])
         # Display result
-        print(f"Uniform integers in range [{case['A']}, {case['B']}]: count = {uniform_count}")
+        print(f"Uniform integers in range [{case['a']}, {case['b']}]: count = {uniform_count}")
         print()
 
 if __name__ == "__main__":

@@ -1,12 +1,12 @@
 from typing import List
 
-def get_min_code_entry_time(N: int, M: int, C: List[int]) -> int:
+def get_min_code_entry_time(n: int, m: int, c: List[int]) -> int:
     """Solve the "Rotary Lock I" puzzle from Meta Careers.
     
-    You're trying to open a lock. The lock comes with a wheel which has N integers
+    You're trying to open a lock. The lock comes with a wheel which has n integers
     written around it in a circle. The wheel is initially pointing to 1. It takes
     1 second to rotate the wheel 1 position, and the wheel can rotate in either
-    direction. You need to stop the wheel on the numbers specified in the code C
+    direction. You need to stop the wheel on the numbers specified in the code c
     in order.
     
     Approach (Greedy - Minimum Distance):
@@ -15,16 +15,16 @@ def get_min_code_entry_time(N: int, M: int, C: List[int]) -> int:
     3. Choose the minimum distance (clockwise or counterclockwise).
     4. Accumulate total time needed.
     
-    Time Complexity: O(M)
-    - Single pass through all M code positions.
+    Time Complexity: O(m)
+    - Single pass through all m code positions.
     
     Space Complexity: O(1)
     - Only using constant extra space for calculations.
     
     Args:
-        N: Number of positions on the wheel (1 to N).
-        M: Length of the code sequence.
-        C: List of M integers representing the code sequence.
+        n: Number of positions on the wheel (1 to n).
+        m: Length of the code sequence.
+        c: List of m integers representing the code sequence.
         
     Returns:
         Minimum time in seconds to enter the complete code.
@@ -32,21 +32,21 @@ def get_min_code_entry_time(N: int, M: int, C: List[int]) -> int:
     # Total time in seconds to enter the code
     number_of_seconds = 0
     # Insert starting position (1) at the beginning of code sequence
-    C.insert(0, 1)
+    c.insert(0, 1)
     
     # Process each transition in the code sequence
-    for i in range(0, M):
+    for i in range(0, m):
         # Calculate distances in both directions
-        if (C[i + 1] > C[i]):
+        if (c[i + 1] > c[i]):
             # Target is ahead: clockwise distance
-            seconds_to_right = C[i + 1] - C[i]
+            seconds_to_right = c[i + 1] - c[i]
             # Counterclockwise distance (going around)
-            seconds_to_left = N - (C[i + 1] - C[i])
+            seconds_to_left = n - (c[i + 1] - c[i])
         else:
             # Target is behind: counterclockwise distance
-            seconds_to_left =  C[i] - C[i + 1]
+            seconds_to_left =  c[i] - c[i + 1]
             # Clockwise distance (going around)
-            seconds_to_right = N - (C[i] - C[i + 1])
+            seconds_to_right = n - (c[i] - c[i + 1])
     
         # Add minimum time to reach next position
         number_of_seconds += min(seconds_to_right, seconds_to_left)
@@ -59,15 +59,15 @@ def read_test_cases(file_path):
     File format:
     - First line: number of test cases
     - For each test case:
-      - Line 1: N (number of positions on wheel)
-      - Line 2: M (length of code sequence)
-      - Line 3: M space-separated integers (code sequence)
+      - Line 1: n (number of positions on wheel)
+      - Line 2: m (length of code sequence)
+      - Line 3: m space-separated integers (code sequence)
     
     Args:
         file_path: Path to the test cases file.
         
     Returns:
-        List of dictionaries, each containing 'N', 'M', and 'C' for a test case.
+        List of dictionaries, each containing 'n', 'm', and 'c' for a test case.
     """
     # Read all lines from the test file
     with open(file_path, 'r') as file:
@@ -77,23 +77,23 @@ def read_test_cases(file_path):
     index = 0
     # Read number of test cases
     test_cases = int(lines[index].strip())
-    index += 1
+    index += 2
 
     # List to store all test case data
     data = []
     # Process each test case
     for _ in range(test_cases):
         # Read number of positions on the wheel
-        N = int(lines[index].strip())
+        n = int(lines[index].strip())
         index += 1
         # Read length of code sequence
-        M = int(lines[index].strip())
+        m = int(lines[index].strip())
         index += 1
         # Read code sequence
-        C = list(map(int, lines[index].strip().split()))
-        index += 1
+        c = list(map(int, lines[index].strip().split()))
+        index += 2
         # Store test case data as dictionary
-        data.append({'N': N, 'M': M, 'C': C})
+        data.append({'n': n, 'm': m, 'c': c})
 
     return data
 
@@ -111,9 +111,9 @@ def main():
     # Process each test case
     for i, case in enumerate(test_cases_data, 1):
         # Display test case input
-        print(f"Test Case #{i}: N = {case['N']} | M = {case['M']} | C = {case['C']}")
+        print(f"Test Case #{i}: N = {case['n']} | M = {case['m']} | C = {case['c']}")
         # Calculate minimum time to enter code
-        min_time = get_min_code_entry_time(case['N'], case['M'], case['C'].copy())
+        min_time = get_min_code_entry_time(case['n'], case['m'], case['c'].copy())
         # Display result
         print(f"Minimum time to enter code: min_time = {min_time}")
         print()
