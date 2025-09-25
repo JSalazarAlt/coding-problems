@@ -1,7 +1,7 @@
 from typing import List
 
 def get_min_problem_count(n: int, s: List[int]) -> int:
-    """Solve the Score Interference I problem from Meta coding challenges.
+    """Solve the Score Interference (Chapter I) puzzle from Meta Careers.
     
     A programming contest has n competitors, each trying to independently
     solve the same set of programming problems. Each problem has a point
@@ -99,7 +99,7 @@ def main():
     # Process each test case
     for i, case in enumerate(test_cases_data, 1):
         # Display test case input
-        print(f"Test Case {i}: N = {case['n']} | S = {case['s']}")
+        print(f"Test Case #{i}: N = {case['n']} | S = {case['s']}")
         # Calculate minimum problems needed
         min_problems = get_min_problem_count(case['n'], case['s'])
         # Display result
